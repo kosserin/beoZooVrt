@@ -1,0 +1,198 @@
+@import 'media-queries';
+@import 'colors';
+.nav-logo{
+    & a{
+        color: $green;
+        text-decoration: none;
+        font-family: 'Akaya Telivigala', cursive;
+        font-size: 2.5rem;
+        &:hover{
+            color: white;
+            transition: .3s ease;
+        }
+
+        & img{
+            margin-right: 10px;
+            width: 50px;
+        }
+    }
+}
+nav{
+    display: flex;
+    width: 100vw;
+    min-height: 15vh;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    position: relative;
+}
+.nav-links{
+    width: 60%;
+    @include mini{
+        padding-top: 10px;
+        position: absolute;
+        top: 15vh;
+        right: 0;
+        width: 100vw;
+        height: 85vh;
+        background-color: $green;
+        transform: translateX(100%);
+        transition: .5s ease;
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+    z-index: 100;
+}
+.toggle .line1{
+transform: rotate(45deg) translate(5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+    }
+.toggle .line3{
+        transform: rotate(-45deg) translate(5px,-6px);
+    }
+.burger{
+    @include mini{
+        cursor: pointer;
+        & div{
+            height: 2px;
+            width: 25px;
+            margin: 6px;
+            background-color: white;
+        }
+    }
+}
+.first-nav,.second-nav{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    @include mini{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    & li{
+        padding:0  2rem;
+        @include mini{
+            padding: .5rem 2rem;
+        }
+    }
+    & a{
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        &:hover{
+            color: $green;
+            transition: .3s ease;
+            @include mini{
+                color: rgb(173, 173, 173);
+            }
+        }
+        & i{
+            font-size: 1rem;
+        }
+    }
+}
+.first-nav{
+    margin-bottom: 20px;
+    & a{
+        font-weight: 500;
+        font-size: 0.8rem;
+        @include mini{
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+    }
+}
+.second-nav{
+    & a{
+        font-weight: 400;
+        font-size: 1rem;
+        @include mini{
+            font-size: 1.2rem;
+        }
+    }
+}
+header{
+    background: linear-gradient(rgba(#000,.4),rgba(#000,0.5)),url('./daiga-ellaby-Sg_OwwU2Z9o-unsplash.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container{
+    height: 85vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    & h1{
+        margin-top: 13%;
+        font-size: 3rem;
+        text-transform: uppercase;
+        @include mini{
+            font-size: 2.5rem;
+            line-height: 43px;
+            margin-top: 10%;
+        }
+        & span{
+            color: $green;
+            font-size: 3.5rem;
+            @include mini{
+                font-size: 3rem;
+            }
+        }
+    }
+    & p{
+        width: 60%;
+        margin: 0 auto;
+        @include mini{
+            width: 90%;
+        }
+    }
+    & a{
+        color: white;
+        text-decoration: none;
+        background: transparent;
+        border: 3px solid $green;
+        width: 200px;
+        display: inline-block;
+        margin: 20px auto 0 auto;
+        padding: .7rem 0;
+        text-transform: uppercase;
+        font-weight: 600;
+        &:hover{
+            background: $green;
+            transition: .3s ease;
+        }
+    }
+    & .social-medias{
+        font-size: 2rem;
+        display: flex;
+        justify-content: flex-end;
+        transform: translateY(300%);
+        @include laptop{
+            transform: translateY(200%);
+        }
+        @include mini{
+            transform: translateY(300%);
+        }
+        @include phone{
+            transform: translateY(110%);
+        }
+        @include fold{
+            transform: translateY(10%);
+        }
+        & a{
+            border: none;
+            padding: 0;
+            margin: 0 10px;
+            width: 60px;
+        }
+    }
+}
